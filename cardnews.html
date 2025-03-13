@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootcamp 8기 소식지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 100%;
+            max-width: 600px; /* 컨테이너 크기 고정 */
+            margin: 20px auto;
+            background: white;
+            padding: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h2 {
+            color: #333;
+        }
+        .slider {
+            position: relative;
+            width: 600px; /* 슬라이더 크기 고정 */
+            overflow: hidden;
+            border-radius: 8px;
+        }
+        .slides {
+            display: flex;
+            width: 600%; /* 이미지 개수에 맞춰 설정 */
+            transition: transform 0.5s ease-in-out;
+        }
+        .slides img {
+            width: 600px; /* 이미지 크기 고정 */
+            height: auto;
+            border-radius: 8px;
+        }
+        .prev, .next {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            border-radius: 50%;
+        }
+        .prev { left: 10px; }
+        .next { right: 10px; }
+        .prev:hover, .next:hover {
+            background: rgba(0, 0, 0, 0.8);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bootcamp 8기 소식지 📢</h2>
+        <div class="slider">
+            <div class="slides">
+                <img src="image1.jpg" alt="소식지 1">
+                <img src="image2.jpg" alt="소식지 2">
+                <img src="image3.jpg" alt="소식지 3">
+                <img src="image4.jpg" alt="소식지 4">
+                <img src="image5.jpg" alt="소식지 5">
+                <img src="image6.jpg" alt="소식지 6">
+            </div>
+            <button class="prev" onclick="moveSlide(-1)">❮</button>
+            <button class="next" onclick="moveSlide(1)">❯</button>
+        </div>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        const slides = document.querySelector(".slides");
+
+        function moveSlide(direction) {
+            const totalSlides = document.querySelectorAll(".slides img").length;
+            slideIndex = (slideIndex + direction + totalSlides) % totalSlides;
+            slides.style.transform = `translateX(-${slideIndex * 600}px)`;
+        }
+    </script>
+
+</body>
+</html>
