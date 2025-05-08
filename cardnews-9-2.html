@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW Bootcamp 9기 소식지</title>
+    <style>
+          * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background: #f5f5f5; }
+        .slider-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: auto;
+            overflow: hidden;            
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .slider { display: flex; transition: transform 0.5s ease-in-out; }
+        .slide { min-width: 100%; padding: 20px; border-radius: 10px; text-align: center; }
+        .slide img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
+        .buttons { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; }
+        .buttons button { background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; }
+        .buttons button:hover { background: rgba(0, 0, 0, 0.8); }
+        .thumbnails { display: flex; justify-content: center; margin-top: 15px; }
+        .thumbnails img { width: 80px; height: 80px; margin: 5px; cursor: pointer; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .thumbnails img:hover { opacity: 0.7; } 
+    </style>
+</head>
+<body>
+     <script>
+const images = ["9기 뉴스레터 1.png", "9기 뉴스레터 2.png", "9기 뉴스레터 3.png", "9기 뉴스레터 4.png", "9기 뉴스레터 5.png", "9기 뉴스레터 6.png", "9기 뉴스레터 7.png"];
+    </script>
+
+    <div class="slider-container">
+        <div class="slider">
+            <script>
+                images.forEach((src, i) => {
+                    document.write(`
+                        <div class="slide"> 
+                            <img src="${src}" alt="카드 ${i + 1} 이미지">
+                           
+                        </div>
+                    `);
+                });
+            </script>
+        </div>
+        <div class="buttons">
+            <button id="left">❮</button>
+            <button id="right">❯</button>
+        </div>
+    </div>
+    
+    <div class="thumbnails">
+        <script>
+            images.forEach((src, i) => {
+                document.write(`
+                    <img src="${src}" alt="썸네일 ${i + 1}" onclick="jumpToSlide(${i})">
+                `);
+            });
+        </script>
+    </div>
+
+    <script>
+        let index = 0;
+        const slider = document.querySelector(".slider");
+        const totalSlides = images.length;
+
+        document.getElementById("left").addEventListener("click", () => {
+            index = (index > 0) ? index - 1 : totalSlides - 1;
+            updateSlide();
+        });
+
+        document.getElementById("right").addEventListener("click", () => {
+            index = (index < totalSlides - 1) ? index + 1 : 0;
+            updateSlide();
+        });
+
+        function updateSlide() {
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        function jumpToSlide(slideIndex) {
+            index = slideIndex;
+            updateSlide();
+        }
+    </script> 
+</html>
