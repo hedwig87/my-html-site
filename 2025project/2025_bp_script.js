@@ -50,6 +50,13 @@ document.querySelectorAll('.project-card').forEach(card => {
 
 // 수상작 카드 클릭 시 상세 정보 모달 (기본 구현)
 document.querySelectorAll('.winner-card, .runner-up-card, .excellence-card').forEach(card => {
+    card.addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-10px) scale(1.02)';
+    });
+    
+    card.addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
     /*card.addEventListener('click', function() {
         // 실제 구현에서는 모달 창을 띄우거나 상세 페이지로 이동
         const projectName = this.querySelector('.project-name').textContent;
