@@ -397,6 +397,11 @@ body {
     }
     
     /* 준우승 섹션 반응형 */
+    .runner-up-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
     .runner-up-content {
         grid-template-columns: 1fr;
         gap: 2rem;
@@ -661,8 +666,8 @@ html {
 
 .runner-up-grid {
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
     margin-top: 4rem;
 }
 
@@ -688,9 +693,9 @@ html {
 
 .runner-up-content {
     display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 2rem;
-    align-items: center;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    align-items: start;
 }
 
 .runner-up-badge {
