@@ -78,23 +78,19 @@ function animateCounters() {
     const counters = document.querySelectorAll('.stat-number');
     
     counters.forEach(counter => {
-        const target = parseInt(counter.textContent.replace(/[^0-9]/g, ''));
+        const originalText = counter.textContent;
+        const target = parseInt(originalText.replace(/[^0-9]/g, ''));
         const increment = target / 50; // 50단계로 나누어 애니메이션
         let current = 0;
         
         const updateCounter = () => {
             if (current < target) {
                 current += increment;
-                if (counter.textContent.includes('+')) {
-                    counter.textContent = Math.ceil(current) + '+';
-                } else if (counter.textContent.includes('개월')) {
-                    counter.textContent = Math.ceil(current) + '개월';
-                } else {
-                    counter.textContent = Math.ceil(current);
-                }
+                counter.textContent = Math.ceil(current);
                 requestAnimationFrame(updateCounter);
             } else {
-                counter.textContent = counter.textContent; // 원래 텍스트 유지
+                // 애니메이션 완료 후 원래 텍스트로 정확히 복원
+                counter.textContent = originalText;
             }
         };
         
