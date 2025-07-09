@@ -576,7 +576,7 @@ html {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 2rem;
+    margin-bottom: 1.5rem;
     color: #ffd700;
     font-weight: 700;
     font-size: 1.5rem;
@@ -587,8 +587,8 @@ html {
 }
 
 .winner-info .project-name {
-    font-size: 2.2rem;
-    margin-bottom: 1rem;
+    font-size: 2rem;
+    /*margin-bottom: 1rem;*/
     color: #333;
     font-weight: 700;
 }
@@ -624,7 +624,7 @@ html {
 
 .winner-info .project-description {
     color: #666;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
     font-size: 1.1rem;
 }
@@ -891,7 +891,7 @@ html {
 /* 섹션 제목 공통 스타일 */
 .section-title {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 3rem;
     font-weight: 700;
     color: #333;
