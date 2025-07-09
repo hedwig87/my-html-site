@@ -576,7 +576,7 @@ html {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 1.5rem;
+    /*margin-bottom: 1.5rem;*/
     color: #ffd700;
     font-weight: 700;
     font-size: 1.5rem;
