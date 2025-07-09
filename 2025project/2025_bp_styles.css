@@ -925,3 +925,10 @@ html {
     font-size: 0.8rem;
     font-weight: 500;
 }
+
+/* 1200x680px 화면 최적화 */
+@media screen and (max-width: 1200px) {
+    .container {
+        padding: 0 80px !important;
+    }
+}
