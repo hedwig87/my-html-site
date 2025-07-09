@@ -549,7 +549,7 @@ html {
     background: linear-gradient(135deg, #fff9e6 0%, #ffffff 100%);
     border: 3px solid #ffd700;
     border-radius: 25px;
-    padding: 3rem;
+    padding: 2rem;
     box-shadow: 0 15px 40px rgba(255, 215, 0, 0.2);
     position: relative;
     overflow: hidden;
@@ -576,7 +576,7 @@ html {
     display: flex;
     align-items: center;
     gap: 15px;
-    /*margin-bottom: 1.5rem;*/
+    margin-bottom: 1.5rem;
     color: #ffd700;
     font-weight: 700;
     font-size: 1.5rem;
@@ -728,7 +728,7 @@ html {
 
 .runner-up-info .project-description {
     color: #666;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
     line-height: 1.8;
     font-size: 1rem;
 }
