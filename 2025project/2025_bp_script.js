@@ -264,3 +264,45 @@ function optimizePerformance() {
         lazyLoadImages();
     }, 1000);
 }
+
+// PDF 다운로드 함수
+function downloadPDF(pdfPath, filename) {
+    // PDF 파일 다운로드 링크 생성
+    const link = document.createElement('a');
+    link.href = pdfPath;
+    link.download = filename;
+    link.style.display = 'none';
+    
+    // 브라우저에 링크 추가 후 클릭하여 다운로드 실행
+    document.body.appendChild(link);
+    link.click();
+    
+    // 링크 제거
+    document.body.removeChild(link);
+    
+    // 다운로드 시작 알림
+    showDownloadNotification(filename);
+}
+
+// 다운로드 알림 표시 함수
+function showDownloadNotification(filename) {
+    // 알림 요소 생성
+    const notification = document.createElement('div');
+    notification.className = 'download-notification';
+    notification.innerHTML = `
+        <div class="notification-content">
+            <i class="fas fa-download"></i>
+            <span>${filename} 다운로드가 시작되었습니다.</span>
+        </div>
+    `;
+    
+    // 페이지에 알림 추가
+    document.body.appendChild(notification);
+    
+    // 3초 후 알림 제거
+    setTimeout(() => {
+        if (notification.parentNode) {
+            notification.parentNode.removeChild(notification);
+        }
+    }, 3000);
+}
