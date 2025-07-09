@@ -576,7 +576,7 @@ html {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #ffd700;
     font-weight: 700;
     font-size: 1.5rem;
@@ -618,7 +618,7 @@ html {
     color: #495057;
     padding: 0.3rem 0.8rem;
     border-radius: 15px;
-    font-size: 0.9rem;
+    font-size: 0.8rem;
     font-weight: 500;
 }
 
@@ -668,14 +668,14 @@ html {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 0.1rem;
 }
 
 .runner-up-card {
     background: linear-gradient(135deg, #f0f0f0 0%, #ffffff 100%);
     border: 3px solid #8C92AC;
     border-radius: 25px;
-    padding: 2.5rem;
+    padding: 2rem;
     box-shadow: 0 15px 40px rgba(140, 146, 172, 0.2);
     position: relative;
     overflow: hidden;
@@ -702,7 +702,7 @@ html {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #8C92AC;
     font-weight: 700;
     font-size: 1.3rem;
@@ -714,7 +714,7 @@ html {
 
 .runner-up-info .project-name {
     font-size: 1.8rem;
-    margin-bottom: 1rem;
+    /*margin-bottom: 1rem;*/
     color: #333;
     font-weight: 700;
 }
@@ -748,7 +748,7 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 2rem;
-    margin-top: 4rem;
+    margin-top: 0.1rem;
 }
 
 .excellence-card {
@@ -781,7 +781,7 @@ html {
     display: flex;
     align-items: center;
     gap: 10px;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     color: #cd7f32;
     font-weight: 700;
     font-size: 1rem;
@@ -793,7 +793,7 @@ html {
 
 .excellence-card .project-name {
     font-size: 1.3rem;
-    margin-bottom: 0.8rem;
+    /*margin-bottom: 0.8rem;*/
     color: #333;
     font-weight: 600;
 }
@@ -822,7 +822,7 @@ html {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-top: 4rem;
+    margin-top: 0.1rem;
 }
 
 .project-card {
@@ -892,7 +892,8 @@ html {
 .section-title {
     text-align: center;
     font-size: 2rem;
-    margin-bottom: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 2rem;
     font-weight: 700;
     color: #333;
     position: relative;
@@ -904,7 +905,7 @@ html {
     bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    width: 60px;
+    width: 200px;
     height: 4px;
     background: linear-gradient(135deg, #960404 0%, #960404 100%);/*linear-gradient(135deg, #667eea 0%, #764ba2 100%);*/
     border-radius: 2px;
@@ -930,5 +931,36 @@ html {
 @media screen and (max-width: 1200px) {
     .container {
         padding: 0 80px !important;
+    }
+    
+    /* 우수상 카드 3개를 가로로 배치 */
+    .excellence-grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.5rem !important;
+        /*margin-top: 3rem !important;*/
+    }
+    
+    /* 우수상 카드 크기 조정 */
+    .excellence-card {
+        padding: 1rem !important;
+    }
+    
+    /* 우수상 제목 크기 조정 */
+    .excellence-card .project-name {
+        font-size: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* 우수상 팀명 크기 조정 */
+    .excellence-card .team-name {
+        font-size: 0.8rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+    
+    /* 우수상 설명 텍스트 조정 */
+    .excellence-card .project-description {
+        font-size: 0.9rem !important;
+        line-height: 1.4 !important;
+        margin-bottom: 0.1rem !important;
     }
 }
