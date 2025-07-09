@@ -598,7 +598,7 @@ html {
 
 .winner-info .project-name {
     font-size: 2rem;
-    /*margin-bottom: 1rem;*/
+    margin-bottom: 0.5rem;
     color: #333;
     font-weight: 700;
 }
@@ -607,7 +607,7 @@ html {
     color: #ffd700;
     font-weight: 700;
     font-size: 1.3rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
 }
 
 .team-members h4 {
@@ -724,7 +724,7 @@ html {
 
 .runner-up-info .project-name {
     font-size: 1.8rem;
-    /*margin-bottom: 1rem;*/
+    margin-bottom: 0.5rem;
     color: #333;
     font-weight: 700;
 }
@@ -733,7 +733,7 @@ html {
     color: #999;
     font-weight: 700;
     font-size: 1.1rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.3rem;
 }
 
 .runner-up-info .project-description {
@@ -803,7 +803,7 @@ html {
 
 .excellence-card .project-name {
     font-size: 1.3rem;
-    /*margin-bottom: 0.8rem;*/
+    margin-bottom: 0.5rem;
     color: #333;
     font-weight: 600;
 }
@@ -812,7 +812,7 @@ html {
     color: #cd7f32;
     font-weight: 600;
     font-size: 1rem;
-    margin-bottom: 0.8rem;
+    margin-bottom: 0.3rem;
 }
 
 .excellence-card .project-description {
@@ -861,7 +861,7 @@ html {
     color: #960404;
     font-size: 0.9rem;
     font-weight: 600;
-    margin-bottom: 0.1rem;
+    margin-bottom: 0.3rem;
 }
 
 .members {
@@ -964,7 +964,7 @@ html {
     /* 우수상 팀명 크기 조정 */
     .excellence-card .team-name {
         font-size: 0.8rem !important;
-        margin-bottom: 0.5rem !important;
+        margin-bottom: 0.3rem !important;
     }
     
     /* 우수상 설명 텍스트 조정 */
@@ -972,5 +972,83 @@ html {
         font-size: 0.9rem !important;
         line-height: 1.4 !important;
         margin-bottom: 0.1rem !important;
+    }
+}
+
+/* 클릭 가능한 카드 스타일 */
+.clickable-card {
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.clickable-card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.clickable-card::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    background: rgba(150, 4, 4, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Font Awesome 6 Free';
+    font-weight: 900;
+    content: '\f019'; /* 다운로드 아이콘 */
+    color: white;
+    font-size: 14px;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.clickable-card:hover::before {
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+/* 다운로드 알림 스타일 */
+.download-notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+    color: white;
+    padding: 15px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 9999;
+    animation: slideInRight 0.3s ease-out;
+}
+
+.notification-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.notification-content i {
+    font-size: 18px;
+}
+
+.notification-content span {
+    font-weight: 500;
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
     }
 }
