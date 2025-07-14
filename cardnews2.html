@@ -3,86 +3,808 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootcamp 8기 소식지</title>
-    <style>
-          * { box-sizing: border-box; margin: 0; padding: 0; }
-        body { background: #f5f5f5; }
-        .slider-container {
-            position: relative;
-            width: 100%;
-            max-width: 700px;
-            margin: auto;
-            overflow: hidden;            
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .slider { display: flex; transition: transform 0.5s ease-in-out; }
-        .slide { min-width: 100%; padding: 20px; border-radius: 10px; text-align: center; }
-        .slide img { width: 100%; border-radius: 10px; margin-bottom: 10px; }
-        .buttons { position: absolute; top: 50%; transform: translateY(-50%); width: 100%; display: flex; justify-content: space-between; }
-        .buttons button { background: rgba(0, 0, 0, 0.5); color: white; border: none; padding: 10px 15px; cursor: pointer; border-radius: 5px; }
-        .buttons button:hover { background: rgba(0, 0, 0, 0.8); }
-        .thumbnails { display: flex; justify-content: center; margin-top: 15px; }
-        .thumbnails img { width: 80px; height: 80px; margin: 5px; cursor: pointer; border-radius: 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
-        .thumbnails img:hover { opacity: 0.7; } 
-    </style>
+    <title>2025 LG SW Bootcamp 프로젝트 수상작 발표</title>
+    <link rel="stylesheet" href="2025_bp_styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-     <script>
-const images = ["101.png", "102.png", "103.png", "104.png", "105.png", "106.png", "107.png", "108.png"];
-    </script>
+    <!-- 헤더 섹션 -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo" onclick="scrollToTop()">
+                    <h1>LG SW Bootcamp 2025</h1>
+                    <p>프로젝트 수상작 발표</p>
+                </div>
+                <nav class="nav">
+                    <a href="#winner" class="nav-link">대상</a>
+                    <a href="#runner-up" class="nav-link">최우수상</a>
+                    <a href="#excellence" class="nav-link">우수상</a>
+                    <a href="#all-projects" class="nav-link">전체 프로젝트</a>
+                </nav>
+            </div>
+        </div>
+    </header>
 
-    <div class="slider-container">
-        <div class="slider">
-            <script>
-                images.forEach((src, i) => {
-                    document.write(`
-                        <div class="slide"> 
-                            <img src="${src}" alt="카드 ${i + 1} 이미지">
-                           
+    <!-- 히어로 섹션 -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h2 class="hero-title">2025 LG 소프트웨어 부트캠프</h2>
+                <h3 class="hero-title2">(LG Software Bootcamp)</h3>
+                <h3 class="hero-subtitle">프로젝트 수상작 발표</h3>
+                <p class="hero-description">
+                    실무 역량과 창의력을 겸비한 신입 개발자들의 프로젝트를 만나보세요
+                </p>
+                <button class="cta-button" onclick="scrollToSection('winner')">
+                    <i class="fas fa-trophy"></i>
+                    수상작 보기
+                </button>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="floating-elements">
+                <div class="element element-1"></div>
+                <div class="element element-2"></div>
+                <div class="element element-3"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 대상 섹션 -->
+    <section id="winner" class="winner-section">
+        <div class="container">
+            <h2 class="section-title">🏆 대상</h2>
+            <div class="winner-card clickable-card" data-aos="fade-up" onclick="downloadPDF('./pdfs/1.pdf', '1.pdf')">
+                <div class="winner-content">
+                    <div class="winner-info">
+                        <div class="award-badge winner-badge">
+                            <i class="fas fa-crown"></i>
+                            <span>대상</span>
                         </div>
-                    `);
-                });
-            </script>
+                        <h3 class="project-name">LLM + ml 활용 이미지 기반 webOS 딩벳 검색 서비스: DingQ</h3>
+                        <p class="team-name">팀 빌려온 고양이</p>
+                        <div class="team-members">
+                            <div class="members-list">
+                                <span class="member">오승근</span>
+                                <span class="member">최민하</span>
+                                <span class="member">강지혁</span>
+                            </div>
+                        </div>
+                        <p class="project-description">
+                            DingQ는 LG webOS 딩벳을 쉽고 빠르게 검색하고 생성할 수 있는 AI 기반 서비스입니다. 
+                            사용자가 Flutter로 구현된 인터랙티브 캔버스에 스케치를 그리면, CLIP 모델로 가장 유사한 딩벳을 검색하고, 
+                            없을 경우 LG 스타일에 맞춘 새로운 딩벳을 생성합니다. 벡터는 사전 계산 및 저장되어 빠른 검색을 지원합니다. 
+                            CustomPainter와 RepaintBoundary를 사용해 드로잉을 부드럽게 처리하고 서버로 전송하며, 
+                            Riverpod와 클린 아키텍처 기반으로 구성해 유지보수성과 확장성을 높였습니다. 
+                            백엔드는 FastAPI 기반으로 GCP Cloud Run 서버리스 환경에 배포돼 자동 확장과 Secret Manager를 통한 보안 관리가 가능하게 설계했습니다.
+                        </p>
+                    </div>
+                    <div class="winner-image">
+                        <div class="team-photo">
+                            <i class="fas fa-users"></i>
+                            <p>팀 HealthTech<br>단체사진</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="buttons">
-            <button id="left">❮</button>
-            <button id="right">❯</button>
+    </section>
+
+    <!-- 최우수상 섹션 -->
+    <section id="runner-up" class="runner-up-section">
+        <div class="container">
+            <h2 class="section-title">🥈 최우수상</h2>
+            <div class="runner-up-grid">
+                <!-- 최우수상 1 -->
+                <div class="runner-up-card clickable-card" data-aos="fade-up" onclick="downloadPDF('./pdfs/2.pdf', '2.pdf')">
+                    <div class="runner-up-content">
+                        <div class="runner-up-info">
+                            <div class="award-badge runner-up-badge">
+                                <i class="fas fa-medal"></i>
+                                <span>최우수상</span>
+                            </div>
+                            <h3 class="project-name">C-4 BombMark: Multi-Processing OS 구현 및 APP 개발</h3>
+                            <p class="team-name">팀 C-4Bomb</p>
+                            <div class="team-members">
+                                <div class="members-list">
+                                    <span class="member">김동영</span>
+                                    <span class="member">이연주</span>
+                                    <span class="member">정경환</span>
+                                    <span class="member">조재용</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                C-4 BombMark는 직접 설계한 멀티프로세싱 운영체제(OS)를 이용하여 
+                                벤치마크 애플리케이션을 통해 CPU 성능을 평가하고 GUI 그래프로 나타내어 확인할 수 있는 프로젝트입니다. 
+                                객관적인 성능 확인을 위해 오픈소스 임베디드 시스템 벤치마크인 EmBench를 타겟 보드에 이식하였으며 
+                                그 결과를 실시간 그래프로 확인할 수 있습니다. 
+                                자체 구현한 OS에서는 Context switching, Demand paging, System call을 구현하여 
+                                다수의 애플리케이션을 동시에 실행할 수 있는 멀티태스킹 환경을 제공합니다.
+                                이러한 기술을 바탕으로 필요한 성능을 충족하고 효율적인 임베디드 보드를 선택할 수 있도록 인사이트를 제시합니다.
+                            </p>
+                        </div>
+                        <div class="runner-up-image">
+                            <div class="team-photo">
+                                <i class="fas fa-users"></i>
+                                <p>팀 GreenLogistics<br>단체사진</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 최우수상 2 -->
+                <div class="runner-up-card clickable-card" data-aos="fade-up" data-aos-delay="200" onclick="downloadPDF('./pdfs/3.pdf', '3.pdf')">
+                    <div class="runner-up-content">
+                        <div class="runner-up-info">
+                            <div class="award-badge runner-up-badge">
+                                <i class="fas fa-medal"></i>
+                                <span>최우수상</span>
+                            </div>
+                            <h3 class="project-name">Proactive Home Agent</h3>
+                            <p class="team-name">팀 MOAI @ Home</p>
+                            <div class="team-members">
+                                <div class="members-list">
+                                    <span class="member">신재욱</span>
+                                    <span class="member">오대균</span>
+                                    <span class="member">설지우</span>
+                                    <span class="member">이규성</span>
+                                </div>
+                            </div>
+                            <p class="project-description">
+                                MOAI at Home 프로젝트는 모두가 집에서 사용할 수 있는 Proactive 스마트 홈 AI Agent를 목표로 개발했습니다. 
+                                저희 서비스는 on-device AI를 활용하여 클라우드 연결 없이 안정성과 보안을 높이고, 
+                                proactive하게 사용자 상태를 파악하여 손동작으로 명령을 실행합니다. 
+                                VLM 모델과 optical flow 알고리즘으로 사용자의 동작을 실시간으로 분석하며, 
+                                AES 암호화를 통해 개인정보를 안전하게 보호하였습니다. 
+                                마지막으로 Mediapipe 기반 손동작 인식 모델로 높은 정확도를 달성하였으며, 
+                                향후 mmWave radar 기술 적용과 LLM 쿼리 암호화를 통해 프라이버시 보호 기능을 더욱 강화할 예정입니다.
+                            </p>
+                            <div class="tech-stack">
+                                <span class="tech">Angular</span>
+                                <span class="tech">Spring Boot</span>
+                                <span class="tech">PostgreSQL</span>
+                                <span class="tech">Redis</span>
+                            </div>
+                        </div>
+                        <div class="runner-up-image">
+                            <div class="team-photo">
+                                <i class="fas fa-users"></i>
+                                <p>팀 SmartCity<br>단체사진</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
+
+    <!-- 우수상 섹션 -->
+    <section id="excellence" class="excellence-section">
+        <div class="container">
+            <h2 class="section-title">🥉 우수상</h2>
+            <div class="excellence-grid">
+                <!-- 우수상 1 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" onclick="downloadPDF('./pdfs/08-A2.pdf', 'phoTOgether_팀KIN.pdf')">
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">phoTOgether</h4>
+                    <p class="team-name">팀 KIN(Keep Inspiring Now)</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">박희민</span>
+                            <span class="member">이정수</span>
+                            <span class="member">박창현</span>
+                            <span class="member">안희경</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        Embedded Linux 기반으로 멀리 떨어져 있는 사람들과 사진을 촬영하는 함께 만드는 Y2K 감성 사진 서비스입니다.
+                    </p>
+                </div>
+
+                <!-- 우수상 2 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" data-aos-delay="100" onclick="downloadPDF('./pdfs/09-A1.pdf', 'ObjectDetection_SmartExit_팀SmartExit.pdf')">
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">Object Detection과 Local LLM을 이용한 스마트 Exit</h4>
+                    <p class="team-name">팀 SmartExit</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">노건호</span>
+                            <span class="member">신관수</span>
+                            <span class="member">이재성</span>
+                            <span class="member">차세현</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        현관의 10초, 하루를 바꾼다.<br>
+                        사람 인식 및 일정, 날씨정보 기반으로 현관에서 오늘 필요한 물건을 안내하는 시스템 입니다.
+                    </p>
+                </div>
+
+                <!-- 우수상 3 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" data-aos-delay="200" onclick="downloadPDF('./pdfs/10_C2.pdf', '페이스미AI로봇_팀표정지어조.pdf')">                    
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">페이스미(FaceMe): 감정을 이해하고 반응하는 AI 로봇</h4>
+                    <p class="team-name">팀 표정지어조</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">김영인</span>
+                            <span class="member">김선휘</span>
+                            <span class="member">김승채</span>
+                            <span class="member">배지호</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        나를 마주하는 감정 피드백 AI 로봇 페이스미입니다.
+                    </p>
+                </div>
+
+                <!-- 우수상 4 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" data-aos-delay="300" onclick="downloadPDF('./pdfs/08-C1.pdf', 'RTOS_SignalEQAnalyzer_팀C-1.pdf')">
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">Signal EQ & Analyzer: RTOS 구현 및 APP 개발</h4>
+                    <p class="team-name">팀 C-1</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">최준하</span>
+                            <span class="member">이승종</span>
+                            <span class="member">장다운</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        직접 구현한 Real-Time Operating System(RTOS) 위에 동작하는 Band 맞춤형 EQ(Equalizer) & 주파수 Analyzer 애플리케이션입니다.
+                    </p>
+                </div>
+
+                <!-- 우수상 5 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" data-aos-delay="400" onclick="downloadPDF('./pdfs/09-B7.pdf', 'FOBI_팀Chill.pdf')">
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">FOBI(File-Oriented Bot Interface)</h4>
+                    <p class="team-name">팀 Chill</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">김민</span>
+                            <span class="member">김하늘</span>
+                            <span class="member">최재원</span>
+                            <span class="member">천용태</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        문서형 파일 기반 Rule-based 챗봇 서비스로, 사내 문서의 목차 및 키워드를 제공하는 문서 도우미 서비스입니다.
+                    </p>
+                </div>
+
+                <!-- 우수상 6 -->
+                <div class="excellence-card clickable-card" data-aos="fade-up" data-aos-delay="500" onclick="downloadPDF('./pdfs/10_A6.pdf', 'SoundMaker_팀브레멘음악대.pdf')">
+                    <div class="award-badge excellence-badge">
+                        <i class="fas fa-star"></i>
+                        <span>우수상</span>
+                    </div>
+                    <h4 class="project-name">네트워크를 이용한 멀티 악기 연주: Sound Maker</h4>
+                    <p class="team-name">팀 브레멘 음악대</p>
+                    <div class="team-members">
+                        <div class="members-list">
+                            <span class="member">안설령</span>
+                            <span class="member">문명석</span>
+                            <span class="member">이윤성</span>
+                            <span class="member">공하영</span>
+                        </div>
+                    </div>
+                    <p class="project-description">
+                        여러 악기의 멜로디를 합주 디바이스에서 믹싱하여 실시간 재생하는 시스템 입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 전체 프로젝트 섹션 -->
+    <section id="all-projects" class="all-projects">
+        <div class="container">
+            <h2 class="section-title">전체 프로젝트</h2>
+            <div class="projects-grid">
+                <!-- 수상작 중 인기상 (수상 라벨 포함) -->
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="0" onclick="downloadPDF('./pdfs/08-A6.pdf', 'BOOSTCAMP_팀A-6.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>BOOSTCAMP: QT 기반 2D 레이싱 게임</h4>
+                        <p class="team-name">팀 A-6</p>
+                        <div class="members">박상훈, 황정민, 김이영, 박소연, 박상준</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="25" onclick="downloadPDF('./pdfs/08-B7.pdf', '텔레스트레이션HandRecognition_팀B-7.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>텔레스트레이션: Hand Gesture& Handwriting Recognition</h4>
+                        <p class="team-name">팀 B-7</p>
+                        <div class="members">최건호, 임승섭, 김한주, 채지헌</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="50" onclick="downloadPDF('./pdfs/08-C2.pdf', 'RTOS_dogfightgame_팀무사기원.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>dogfight Game: RTOS 구현 및 App 개발</h4>
+                        <p class="team-name">팀 무사기원</p>
+                        <div class="members">전재영, 나인수, 이지호</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="75" onclick="downloadPDF('./pdfs/09-A5.pdf', 'AI기반AutoHouse_팀눈칫밥들.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>AI 기술을 활용한 Auto House</h4>
+                        <p class="team-name">팀 눈칫밥들</p>
+                        <div class="members">최하영, 구승연, 정원, 박상현</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="100" onclick="downloadPDF('./pdfs/09-B2.pdf', 'LG인의복지를한눈에_팀복G갓G.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>엘G 복G 갓G(LG인의 복지를 한눈에!)</h4>
+                        <p class="team-name">팀 복G갓G</p>
+                        <div class="members">변주현, 양창희, 노제원, 이예림</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="125" onclick="downloadPDF('./pdfs/09-C3.pdf', '멀티프로세싱OS_LGEscaperoom_팀어셈블리깎는노인.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>LG Escape Room: Multi-Processing OS 구현 및 APP 개발</h4>
+                        <p class="team-name">팀 어셈블리 깎는 노인</p>
+                        <div class="members">박경서, 유상욱, 원준호, 오차영</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="150" onclick="downloadPDF('./pdfs/10_A5.pdf', '여름에즐기는스노우보드_팀SOLE.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>여름에 즐기는 스노우보드</h4>
+                        <p class="team-name">팀 SOLE</p>
+                        <div class="members">이승엽, 예종호, 남주형, 김재욱</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="175" onclick="downloadPDF('./pdfs/10_B6.pdf', 'AI기반주식트렌드데이터자동화_시크릿주주.pdf')">
+                    <div class="project-info">
+                        <span class="award-label popular">인기상</span>
+                        <h4>주식 입문자를 위한 인공지능 기반 주식 트렌드 데이터 자동화 대시보드</h4>
+                        <p class="team-name">팀 시크릿주주</p>
+                        <div class="members">이승우, 주재훈, 홍예선, 김성현</div>
+                    </div>
+                </div>
+
+                <!-- 일반 참가 프로젝트들 (19-50번) : 10기 수상작은 위로 올리기!! -->
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="450" onclick="downloadPDF('./pdfs/10_A1.pdf', '안면인식기반출석시스템_팀황금방패.pdf')">
+                    <div class="project-info">
+                        <h4>안면인식 기반 출석 시스템</h4>
+                        <p class="team-name">팀 황금방패</p>
+                        <div class="members">김범주, 김다영, 노우준, 박민준</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="475" onclick="downloadPDF('./pdfs/10_A2.pdf', '내가그린그런그림_팀내가그린그런그림.pdf')">
+                    <div class="project-info">
+                        <h4>내가 그린 그런 그림</h4>
+                        <p class="team-name">팀 내가 그린 그런 그림</p>
+                        <div class="members">이상인, 박수아, 박성현, 김동언</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="500" onclick="downloadPDF('./pdfs/10_A3.pdf', '피치피치_팀부트코인.pdf')">
+                    <div class="project-info">
+                        <h4>마이크 음정 체크 및 음정 높이 게임: 피치피치</h4>
+                        <p class="team-name">팀 부트코인</p>
+                        <div class="members">강상원, 박건희, 조민석, 김예빈</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="525" onclick="downloadPDF('./pdfs/10_A4.pdf', 'SynQ_팀무제.pdf')">
+                    <div class="project-info">
+                        <h4>SynQ: Sync Cue</h4>
+                        <p class="team-name">팀 무제</p>
+                        <div class="members">김주현, 홍민기, 정현오, 정지우</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="600" onclick="downloadPDF('./pdfs/10_B1.pdf', '업종별상권분석및시각화_팀BlueSPOT.pdf')">
+                    <div class="project-info">
+                        <h4>서울시 업종별 상권 분석 및 시각화 서비스</h4>
+                        <p class="team-name">팀 Blue SPOT</p>
+                        <div class="members">여준원, 곽지인, 김민, 이선민</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="650" onclick="downloadPDF('./pdfs/10_B3.pdf', '마곡점심메뉴추천_팀푸드득.pdf')">
+                    <div class="project-info">
+                        <h4>rga를 기반으로 하여 LLM을 이용한 점메추(마곡 점심메뉴추천)</h4>
+                        <p class="team-name">팀 푸드득</p>
+                        <div class="members">김남효, 안유빈, 변현섭, 정우석</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="675" onclick="downloadPDF('./pdfs/10_B4.pdf', '부동산매물탐색및위험도평가_팀부동산의민족.pdf')">
+                    <div class="project-info">
+                        <h4>임대 주택 포함 부동산 매물 탐색 및 위험도 평가</h4>
+                        <p class="team-name">팀 부동산의 민족</p>
+                        <div class="members">이정엽, 류재학, 하지성, 박정준</div>
+                    </div>
+                </div> <!-- -->            
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="700" onclick="downloadPDF('./pdfs/10_B5.pdf', '치킨집창업위치추천_팀치킨이닭.pdf')">
+                    <div class="project-info">
+                        <h4>서울시 상권 데이터 분석 통한 치킨집 창업 위치 추천</h4>
+                        <p class="team-name">팀 치킨이닭</p>
+                        <div class="members">박채림, 최현욱, 최상원</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="750" onclick="downloadPDF('./pdfs/10_C1.pdf', 'WaQUO_팀OneTeam.pdf')">
+                    <div class="project-info">
+                        <h4>mmWave 레이더 및 AI 기반 지능형 수면 관리 시스템: WaQ UP</h4>
+                        <p class="team-name">팀 OneTeam</p>
+                        <div class="members">박재민, 김진석, 오영재, 조호성</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="800" onclick="downloadPDF('./pdfs/10_C3.pdf', 'AI식물도감_팀3팀.pdf')">
+                    <div class="project-info">
+                        <h4>AI식물도감 Plantdex</h4>
+                        <p class="team-name">팀 3팀</p>
+                        <div class="members">박중필, 김준규, 신민규, 송리준, 홍석진</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="825" onclick="downloadPDF('./pdfs/09-A2.pdf', 'AI기반스마트자세코칭_팀PEPC.pdf')">
+                    <div class="project-info">
+                        <h4>AI 기반 정밀 관절 측정으로 완성하는 스마트 자세 코칭</h4>
+                        <p class="team-name">팀 PEPC</p>
+                        <div class="members">최보영, 이준섭, 최성진, 김동규</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="850" onclick="downloadPDF('./pdfs/09-A3.pdf', '얼굴인식스마트TV솔루션EyesOnMe_팀MS4.pdf')">
+                    <div class="project-info">
+                        <h4>얼굴인식으로 구현한 리모콘리스 스마트 TV 솔루션 EyesOnMe</h4>
+                        <p class="team-name">팀 MS4</p>
+                        <div class="members">박진성, 김도현, 이하윤, 차민혁</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="875" onclick="downloadPDF('./pdfs/09-A4.pdf', 'VisionbasedInteractiveUx_팀VIU.pdf')">
+                    <div class="project-info">
+                        <h4>VIU(Vision based Interactive Ux)</h4>
+                        <p class="team-name">팀 VIU</p>
+                        <div class="members">김진섭, 백지훈, 오지은, 허건회, 김지원(Q9)</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="900" onclick="downloadPDF('./pdfs/09-A6.pdf', 'AI소개팅어시스턴트_팀Knock-knock.pdf')">
+                    <div class="project-info">
+                        <h4>AI 소개팅 어시스턴트</h4>
+                        <p class="team-name">팀 Knock-knock</p>
+                        <div class="members">김지원(선행), 정민지, 강민주, 김경환, 박태성</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="925" onclick="downloadPDF('./pdfs/09-B1.pdf', '시계열예측모델활용암호화폐자동매매_팀ATDDAMOMMA.pdf')">
+                    <div class="project-info">
+                        <h4>시계열 예측 모델을 활용한 암호화폐 자동 매매 및 시각화</h4>
+                        <p class="team-name">팀 ATDDA-MOMMA</p>
+                        <div class="members">김성수, 김세영, 김성은, 박정혁</div>
+                    </div>
+                </div><!-- -->
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="950" onclick="downloadPDF('./pdfs/09-B3.pdf', '웹서버로그분석및시각화_팀LOVi.pdf')">
+                    <div class="project-info">
+                        <h4>웹 서버 로그 분석 및 시각화 대시보드</h4>
+                        <p class="team-name">팀 LOVi</p>
+                        <div class="members">정민영, 김민지(MS), 이진서, 정민화</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="975" onclick="downloadPDF('./pdfs/09-B4.pdf', '새도리_팀1등도채가혁.pdf')">
+                    <div class="project-info">
+                        <h4>세상 사람들의 관심사를 볼 수 있는 백과사전 대시보드(새도리)</h4>
+                        <p class="team-name">팀 1등도채가혁</p>
+                        <div class="members">김민혁, 임도훈, 이가경, 김채은</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1000" onclick="downloadPDF('./pdfs/09-B5.pdf', 'DASHOPS_팀4MENMONTH.pdf')">
+                    <div class="project-info">
+                        <h4>DASHOPS: 오픈소스기반 메트릭 측정 및 대시보드 구축</h4>
+                        <p class="team-name">4 MEN MONTH</p>
+                        <div class="members">김현정, 이동호, 김준희, 서현명</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1025" onclick="downloadPDF('./pdfs/09-B6.pdf', '유투브트렌드분석요즘INSight_팀가디언스오브갤럭시.pdf')">
+                    <div class="project-info">
+                        <h4>대시보드를 활용한 유튜브 트렌드 분석 사이트(요즘 IN:Sight)</h4>
+                        <p class="team-name">팀 가디언즈오브갤럭시</p>
+                        <div class="members">정송민, 윤상현, 국주현, 김선미</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1050" onclick="downloadPDF('./pdfs/09-C1.pdf', '멀티프로세싱OS_테트리스_팀일팀.pdf')">
+                    <div class="project-info">
+                        <h4>Multi-Processing OS 구현 및 APP(테트리스) 개발</h4>
+                        <p class="team-name">팀 일팀</p>
+                        <div class="members">김석현, 도준형, 안홍규</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1075" onclick="downloadPDF('./pdfs/09-C2.pdf', '멀티프로세싱OS_OZMULTIOS_팀오즈의마법사.pdf')">
+                    <div class="project-info">
+                        <h4>OZ MULTIOS: Multi-Processing OS 구현 및 APP 개발</h4>
+                        <p class="team-name">팀 OS(오즈)의 마법사</p>
+                        <div class="members">김민지(ES), 김성중, 선동진</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1100" onclick="downloadPDF('./pdfs/08-A1.pdf', '찰칵컬러빙고_팀A-1.pdf')">
+                    <div class="project-info">
+                        <h4>찰칵 컬러빙고</h4>
+                        <p class="team-name">팀 A-1</p>
+                        <div class="members">김현구, 박주영, 이승환, 김유진</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1125" onclick="downloadPDF('./pdfs/08-A3.pdf', 'EchoBeat_팀A-3.pdf')">
+                    <div class="project-info">
+                        <h4>Echo Beat</h4>
+                        <p class="team-name">팀 A-3</p>
+                        <div class="members">임연지, 하솔비, 이승원, 조창환</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1150" onclick="downloadPDF('./pdfs/08-A4.pdf', '두둥_팀A-4.pdf')">
+                    <div class="project-info">
+                        <h4>센서기반 풍물 합주 시스템, 두둥</h4>
+                        <p class="team-name">팀 A-4</p>
+                        <div class="members">김창엽, 유나연, 홍진서, 조성윤, 정희수</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1175" onclick="downloadPDF('./pdfs/08-A5.pdf', '디바이스모니터링대시보드_팀A-5.pdf')">
+                    <div class="project-info">
+                        <h4>Framework 기반 디바이스 모니터링 대시보드</h4>
+                        <p class="team-name">팀 A-5</p>
+                        <div class="members">조완제, 이윤아, 윤장원, 한근영, 차유화</div>
+                    </div>
+                </div> <!-- -->
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1200" onclick="downloadPDF('./pdfs/08-B1.pdf', '감정인식AI라이어게임_팀피노키오.pdf')">
+                    <div class="project-info">
+                        <h4>당신은 감정을 숨길 수 있을까요? - 감정인식 AI 라이어 게임</h4>
+                        <p class="team-name">팀 피노키오</p>
+                        <div class="members">주한음, 민지현, 엄한결, 정수현</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1225" onclick="downloadPDF('./pdfs/08-B3.pdf', 'FACEREADER_팀B-3.pdf')">
+                    <div class="project-info">
+                        <h4>FACE READER : MYTH OR SCIENCE?</h4>
+                        <p class="team-name">팀 B-3</p>
+                        <div class="members">정재원, 이희준, 백건우, 김동환</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1250" onclick="downloadPDF('./pdfs/08-B4.pdf', '네가그린기린일기_팀하찮은기림.pdf')">
+                    <div class="project-info">
+                        <h4>네가 그린 기린 일기</h4>
+                        <p class="team-name">팀 하찮은 기린</p>
+                        <div class="members">김덕륜, 한범석, 문상인, 배정은</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1275" onclick="downloadPDF('./pdfs/08-B5.pdf', '시각장애인을위한보행네이게이션_팀SeeFar.pdf')">
+                    <div class="project-info">
+                        <h4>시각장애인을 위한 보행 네비게이션 앱 : SeeFar</h4>
+                        <p class="team-name">팀 SeeFar</p>
+                        <div class="members">주민범, 이재원, 이예은, 장재우</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1300" onclick="downloadPDF('./pdfs/08-B6.pdf', 'L-PickPose인생사진_팀B-6.pdf')">
+                    <div class="project-info">
+                        <h4>L-Pick Pose 찍고 인생사진 건지자!</h4>
+                        <p class="team-name">팀 B-6</p>
+                        <div class="members">전수형, 강신규, 김태균, 조서연</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1325" onclick="downloadPDF('./pdfs/08-C3.pdf', 'RTOS_Bounceball_팀C-3.pdf')">
+                    <div class="project-info">
+                        <h4>BOUNCE BALL</h4>
+                        <p class="team-name">팀 C-3</p>
+                        <div class="members">서창희, 배현준, 임락균</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1350" onclick="downloadPDF('./pdfs/08-C4.pdf', 'RTOS_Themazerunner_팀C-4.pdf')">
+                    <div class="project-info">
+                        <h4>The MAZE Runner</h4>
+                        <p class="team-name">팀 C-4</p>
+                        <div class="members">신동욱, 김규리, 이재학</div>
+                    </div>
+                </div> <!-- -->
+                
+                <!-- 수상작 대상~우수상 (수상 라벨 포함) -->
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1425" onclick="downloadPDF('./pdfs/10_B2.pdf', '딩벳검색_DingQ_팀빌려온고양이.pdf')">
+                    <div class="project-info">
+                        <span class="award-label runner-up">대상</span>
+                        <h4>LLM + ml 활용 이미지 기반 webOS 딩벳 검색 서비스: DingQ</h4>
+                        <p class="team-name">팀 빌려온 고양이</p>
+                        <div class="members">오승근, 최민하, 강지혁</div>
+                    </div>
+                </div>
+
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1375" onclick="downloadPDF('/pdfs/09-C4.pdf', '멀티프로세싱OS_C4BombMark_팀C4Bomb.pdf')">
+                    <div class="project-info">
+                        <span class="award-label winner">최우수상</span>
+                        <h4>C-4 BombMark: Multi-Processing OS 구현 및 APP 개발</h4>
+                        <p class="team-name">팀 C-4Bomb</p>
+                        <div class="members">김동영, 이연주, 정경환, 조재용</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1400" onclick="downloadPDF('/pdfs/08-B2.pdf', 'ProactiveHomeAgent_팀MOAIatHOME.pdf')">
+                    <div class="project-info">
+                        <span class="award-label runner-up">최우수상</span>
+                        <h4>Proactive Home Agent</h4>
+                        <p class="team-name">팀 MOAI @ Home</p>
+                        <div class="members">신재욱, 오대균, 설지우, 이규성</div>
+                    </div>
+                </div>                
+
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1450" onclick="downloadPDF('./pdfs/08-A2.pdf', 'phoTOgether_팀KIN.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상</span>
+                        <h4>phoTOgether</h4>
+                        <p class="team-name">팀 KIN(Keep Inspiring Now)</p>
+                        <div class="members">박희민, 이정수, 박창현, 안희경</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1475" onclick="downloadPDF('./pdfs/08-C1.pdf', 'RTOS_SignalEQAnalyzer_팀C-1.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상</span>
+                        <h4>Signal EQ & Analyzer: RTOS 구현 및 APP 개발</h4>
+                        <p class="team-name">팀 C-1</p>
+                        <div class="members">최준하, 이승종, 장다운</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1500" onclick="downloadPDF(''./pdfs/09-A1.pdf', 'ObjectDetection_SmartExit_팀SmartExit.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상</span>
+                        <h4>Object Detection과 Local LLM을 이용한 스마트 Exit</h4>
+                        <p class="team-name">팀 SmartExit</p>
+                        <div class="members">노건호, 신관수, 이재성, 차세현</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1525" onclick="downloadPDF('./pdfs/09-B7.pdf', 'FOBI_팀Chill.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상</span>
+                        <h4>FOBI: File-Oriented Bot Interface</h4>
+                        <p class="team-name">팀 Chill</p>
+                        <div class="members">김민, 김하늘, 최재원, 천용태</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1550" onclick="downloadPDF('./pdfs/10_C2.pdf', '페이스미AI로봇_팀표정지어조.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상/인기상</span>
+                        <h4>페이스미(FaceMe): 감정을 이해하고 반응하는 AI 로봇</h4>
+                        <p class="team-name">팀 표정지어조</p>
+                        <div class="members">김영인, 김선휘, 김승채, 배지호</div>
+                    </div>
+                </div>
+                
+                <div class="project-card clickable-card" data-aos="zoom-in" data-aos-delay="1575" onclick="downloadPDF('./pdfs/10_A6.pdf', 'SoundMaker_팀브레멘음악대.pdf')">
+                    <div class="project-info">
+                        <span class="award-label excellence">우수상</span>
+                        <h4>네트워크를 이용한 멀티 악기 연주: Sound Maker</h4>
+                        <p class="team-name">팀 브레멘 음악대</p>
+                        <div class="members">안설령, 문명석, 이윤성, 공하영</div>
+                    </div>
+                </div>
+
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- 정보 섹션 -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>2025 LG SW Bootcamp</h2>
+                    <p>
+                        LG SW Bootcamp은 스스로 학습하고, 동료와 협업하며 지속적으로 성장하는 실무형 인재를 육성하는 프로그램입니다.<br>
+                        4주 2일간 진행되는 교육과 프로젝트를 통해, 신입 SW개발자들은<br> 
+                        자기주도적으로 문제를 인지하고 이를 해결할 수 있는 능력을 기릅니다.<br>
+                    </p>
+                    <div class="stats">
+                        <div class="stat">
+                            <span class="stat-number">194</span>
+                            <span class="stat-label">참가자</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">49</span>
+                            <span class="stat-label">프로젝트</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-number">22</span>
+                            <span class="stat-label">교육기간</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-visual" data-aos="fade-left">
+                    <div class="visual-placeholder">
+                        <i class="fas fa-code"></i>
+                        <p>LG SW Bootcamp 신입 SW개발자들의 프로젝트들</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 푸터 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <h3>LG SW Bootcamp 2025</h3>
+                    <p>미래를 코딩하는 개발자들의 여정</p>
+                </div>
+                <div class="footer-links">
+                    <a href="https://bootcamp.lge.com" class="footer-link" target="_blank" rel="noopener">
+                        Bootcamp Home
+                    </a>                    
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>SW공학(연) SW역량강화팀. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- AOS 라이브러리 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <script src="2025_bp_script.js"></script>
     
-    <div class="thumbnails">
-        <script>
-            images.forEach((src, i) => {
-                document.write(`
-                    <img src="${src}" alt="썸네일 ${i + 1}" onclick="jumpToSlide(${i})">
-                `);
-            });
-        </script>
-    </div>
-
+    <!-- 로고 클릭 시 맨 위로 스크롤 -->
     <script>
-        let index = 0;
-        const slider = document.querySelector(".slider");
-        const totalSlides = images.length;
-
-        document.getElementById("left").addEventListener("click", () => {
-            index = (index > 0) ? index - 1 : totalSlides - 1;
-            updateSlide();
-        });
-
-        document.getElementById("right").addEventListener("click", () => {
-            index = (index < totalSlides - 1) ? index + 1 : 0;
-            updateSlide();
-        });
-
-        function updateSlide() {
-            slider.style.transform = `translateX(-${index * 100}%)`;
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
         }
-
-        function jumpToSlide(slideIndex) {
-            index = slideIndex;
-            updateSlide();
-        }
-    </script> 
+    </script>
+</body>
 </html>
