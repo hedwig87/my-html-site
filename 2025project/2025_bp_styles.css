@@ -655,7 +655,8 @@ html {
 .team-photo {
     width: 100%;
     aspect-ratio: 16/9;
-    background: linear-gradient(135deg, #ffd700 0%, #ffed4e 100%);
+    background-image: url('1752473846292.jpg');
+    background-size: contain;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -751,8 +752,15 @@ html {
     font-size: 1rem;
 }
 
-.runner-up-image .team-photo {
-    background: linear-gradient(135deg, #c0c0c0 0%, #e0e0e0 100%);
+.runner-up-image .team-photo1 {
+    background-image: url('1752473846752.jpg');
+    background-size: contain;
+    box-shadow: 0 10px 30px rgba(192, 192, 192, 0.3);
+}
+
+.runner-up-image .team-photo2 {
+    background-image: url('1752473846472.jpg');
+    background-size: contain;
     box-shadow: 0 10px 30px rgba(192, 192, 192, 0.3);
 }
 
